@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos List en JS</title>
     <link rel="stylesheet" href="app.css">
+    <script src="app.js" async></script>
 </head>
 <body>
     <header>
-        <h2>Titre H2</h2>
+        <h2>Ma todo liste</h2>
         <span>
-            <div></div>
+            <div>Apprendre à coder une todo liste en JavaScript</div>
         </span>
     </header>
     
     <section>
         <nav>
-            <h3>Une nav</h3>
+            <h3 id="nav-title">Une nav</h3>
             <ul>
                 <li>Une liste</li>
+                <li>De choses</li>
+                <li>A faire</li>
             </ul>
         </nav>
         
@@ -32,6 +35,10 @@
     
     <footer>
         <p>Ceci est un Footer</p>
+        <input type="text" name="input-todo" id="input-todo">
+        <input type="button" value="Ajouter" onclick="addItem()">
+        <input type="button" value="Supprimer" onclick="deleteItem()">
+        <input type="button" value="Tout Supprimer" onclick="deleteAllItems()">
     </footer>
 </body>
 </html>
