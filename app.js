@@ -20,9 +20,25 @@ resetList()
 function addItem() {
     let valueInput = document.getElementById("input-todo").value
     //console.log("addItem")
-    todos.push(valueInput)
-    addItemToNav(valueInput)
+    if (checkDoublons(valueInput)) {
+        alert("Votre tâche figure déjà dans la liste !")
+    } else {
+        todos.push(valueInput)
+        addItemToNav(valueInput)
+    }
     console.log("addItem :", todos)
+}
+
+//Fonction checkDoublons() // Pour éviter d'ajouter 2 fois le même item
+function checkDoublons(itemList) {
+    let isDoublons = false
+    for (let i = 0; i < todos.length; i++) {
+        const item = todos[i]
+        if (itemList === item) {
+            isDoublons = true
+        }
+    }
+    return isDoublons
 }
 
 // Fonction addItemToNav() // Ajouter l'item graphiquement
